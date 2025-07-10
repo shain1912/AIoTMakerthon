@@ -1,0 +1,2 @@
+BLEAdvertising *pAdvertising = pServer->getAdvertising();
+pAdvertising->start();

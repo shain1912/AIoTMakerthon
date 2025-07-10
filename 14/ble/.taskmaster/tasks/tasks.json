@@ -1,0 +1,178 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "분석 및 계획 수립",
+        "description": "기존 README.md 파일을 분석하고 강의자료 제작을 위한 전체 계획을 수립합니다.",
+        "status": "completed",
+        "details": "1. C:\\Users\\seong\\Documents\\GitHub\\AIoTMakerthon\\14\\ble\\README.md 파일 내용 분석\n2. 주요 주제 및 학습 순서 파악\n3. 필요한 이미지 및 코드 예제 목록 작성\n4. 500줄 제한을 고려한 문서 분할 전략 수립\n5. 각 모듈별 예상 라인 수 계산\n6. 크롤링 대상 URL 목록 작성\n7. 작업 일정 및 우선순위 설정",
+        "testStrategy": "- 분석 결과가 원본 README.md의 모든 주요 내용을 포함하는지 확인\n- 문서 분할 전략이 500줄 제한을 준수하는지 검증\n- 계획이 프로젝트 목표와 요구사항을 모두 충족하는지 검토",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 2,
+        "title": "웹 크롤링 스크립트 개발",
+        "description": "RandomNerdTutorials 사이트에서 ESP32 BLE 관련 이미지와 코드 예제를 수집하는 크롤링 스크립트를 개발합니다.",
+        "status": "completed",
+        "details": "1. Python과 Playwright 또는 BeautifulSoup 라이브러리 설치\n2. 대상 URL(https://randomnerdtutorials.com/esp32-bluetooth-low-energy-ble-arduino-ide/)에서 이미지 추출 함수 구현\n```python\ndef extract_images(url):\n    # Playwright 또는 BeautifulSoup으로 페이지 로드\n    # 이미지 태그 선택 및 URL 추출\n    # 이미지 저장 또는 URL 목록 반환\n```\n3. 코드 예제 추출 함수 구현\n```python\ndef extract_code_examples(url):\n    # 코드 블록 선택자 정의\n    # 코드 블록 내용 추출 및 저장\n```\n4. 설명 텍스트 추출 함수 구현\n5. 크롤링 실패 시 오류 처리 및 재시도 로직 구현\n6. 추출된 자료를 구조화된 형태로 저장",
+        "testStrategy": "- 다양한 네트워크 환경에서 크롤링 스크립트 테스트\n- 이미지 URL이 올바르게 추출되는지 확인\n- 코드 예제가 형식을 유지한 채 추출되는지 검증\n- 오류 상황(네트워크 지연, 페이지 구조 변경 등)에 대한 예외 처리 테스트",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 3,
+        "title": "이미지 및 자료 수집 실행",
+        "description": "개발된 크롤링 스크립트를 실행하여 필요한 모든 이미지와 코드 예제를 수집합니다.",
+        "status": "completed",
+        "details": "1. 크롤링 스크립트 실행\n2. 이미지 다운로드 및 저장 경로 설정\n```\n/images/esp32_ble_[번호].png 형식으로 저장\n```\n3. 코드 예제 텍스트 파일 저장\n```\n/code_examples/esp32_ble_[번호].txt 형식으로 저장\n```\n4. 크롤링 결과 로그 기록\n5. 누락된 자료 확인 및 수동 수집 진행\n6. 수집된 자료 정리 및 분류\n7. 이미지 최적화(필요시 크기 조정)",
+        "testStrategy": "- 모든 필요 이미지가 수집되었는지 수동 확인\n- 이미지 파일 무결성 및 표시 품질 확인\n- 코드 예제의 형식 및 내용 정확성 검증\n- 누락된 자료에 대한 대체 방안 확인",
+        "priority": "high",
+        "dependencies": [
+          2
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 4,
+        "title": "콘텐츠 구조 설계",
+        "description": "수집된 자료와 기존 README.md를 기반으로 강의자료의 전체 구조를 설계합니다.",
+        "status": "completed",
+        "details": "1. 학습 주제 논리적 순서 정의\n2. 각 주제별 세부 목차 작성\n3. 500줄 제한을 고려한 문서 분할 계획 구체화\n```\n- 모듈1: ESP32 BLE 개요 및 기초 이론\n- 모듈2: BLE 서버 구현\n- 모듈3: BLE 클라이언트 구현\n- 모듈4: 실제 응용 사례\n```\n4. 각 모듈별 포함할 이미지 및 코드 예제 매핑\n5. 모듈 간 연결 및 참조 방식 정의\n6. 실습 과제 및 예제 프로젝트 구성",
+        "testStrategy": "- 구조가 학습 흐름에 논리적인지 검토\n- 모든 필수 주제가 포함되었는지 확인\n- 각 모듈이 500줄 제한 내에 완성 가능한지 계산\n- 이미지와 코드 예제가 적절히 분배되었는지 확인",
+        "priority": "high",
+        "dependencies": [
+          1,
+          3
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 5,
+        "title": "모듈 1: ESP32 BLE 개요 작성",
+        "description": "ESP32 BLE 기술의 개요, 기본 개념 및 아키텍처에 대한 첫 번째 모듈을 작성합니다.",
+        "status": "completed",
+        "details": "1. 마크다운 형식으로 다음 내용 작성:\n   - BLE 기술 소개 및 ESP32에서의 구현\n   - BLE와 기존 Bluetooth의 차이점\n   - ESP32 BLE 스택 아키텍처 다이어그램 포함\n   - BLE 용어 및 주요 개념 설명(GAP, GATT, 서비스, 특성 등)\n2. 관련 이미지 삽입\n3. 기본 설정 및 라이브러리 설치 가이드 포함\n4. Arduino IDE에서 ESP32 BLE 개발 환경 구성 방법\n5. 줄 수 계산 및 500줄 제한 준수 확인",
+        "testStrategy": "- 마크다운 렌더링 테스트\n- 이미지가 올바르게 표시되는지 확인\n- 기술적 정확성 검토\n- 초보자가 이해하기 쉬운 설명인지 평가\n- 줄 수가 500줄 이내인지 확인",
+        "priority": "medium",
+        "dependencies": [
+          3,
+          4
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 6,
+        "title": "모듈 2: BLE 서버 구현 가이드 작성",
+        "description": "ESP32를 BLE 서버로 구성하는 방법과 관련 코드 예제를 포함한 두 번째 모듈을 작성합니다.",
+        "status": "completed",
+        "details": "1. 마크다운 형식으로 다음 내용 작성:\n   - BLE 서버 개념 및 아키텍처 설명\n   - 서비스 및 특성 정의 방법\n   - 알림 및 표시 기능 구현\n2. 기본 BLE 서버 코드 예제 포함\n```cpp\n#include <BLEDevice.h>\n#include <BLEServer.h>\n#include <BLEUtils.h>\n#include <BLE2902.h>\n\n// BLE 서버 구현 코드\n// UUID 정의\n// 서비스 및 특성 설정\n// 콜백 함수 구현\n```\n3. 단계별 구현 가이드 및 설명\n4. 디버깅 및 문제 해결 팁\n5. 관련 이미지 및 다이어그램 삽입",
+        "testStrategy": "- 코드 예제 컴파일 및 실행 테스트\n- 설명과 코드의 일관성 확인\n- 이미지가 올바르게 표시되는지 확인\n- 단계별 가이드가 명확한지 검토\n- 줄 수가 500줄 이내인지 확인",
+        "priority": "medium",
+        "dependencies": [
+          5
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 7,
+        "title": "모듈 3: BLE 클라이언트 구현 가이드 작성",
+        "description": "ESP32를 BLE 클라이언트로 구성하는 방법과 관련 코드 예제를 포함한 세 번째 모듈을 작성합니다.",
+        "details": "1. 마크다운 형식으로 다음 내용 작성:\n   - BLE 클라이언트 개념 및 아키텍처 설명\n   - 서버 검색 및 연결 방법\n   - 서비스 및 특성 탐색\n   - 데이터 읽기 및 쓰기 구현\n2. 기본 BLE 클라이언트 코드 예제 포함\n```cpp\n#include <BLEDevice.h>\n#include <BLEClient.h>\n#include <BLEScan.h>\n#include <BLEAdvertisedDevice.h>\n\n// BLE 클라이언트 구현 코드\n// 스캔 및 연결 로직\n// 데이터 교환 구현\n// 콜백 함수 정의\n```\n3. 단계별 구현 가이드 및 설명\n4. 디버깅 및 문제 해결 팁\n5. 관련 이미지 및 다이어그램 삽입",
+        "testStrategy": "- 코드 예제 컴파일 및 실행 테스트\n- 설명과 코드의 일관성 확인\n- 이미지가 올바르게 표시되는지 확인\n- 단계별 가이드가 명확한지 검토\n- 줄 수가 500줄 이내인지 확인",
+        "priority": "medium",
+        "dependencies": [
+          6
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 8,
+        "title": "모듈 4: BLE 통신 실습 예제 작성",
+        "description": "ESP32 BLE 서버와 클라이언트 간의 통신을 구현하는 실습 예제를 포함한 네 번째 모듈을 작성합니다.",
+        "details": "1. 마크다운 형식으로 다음 내용 작성:\n   - 두 ESP32 디바이스 간 BLE 통신 구현 방법\n   - 센서 데이터 전송 예제\n   - 원격 제어 구현 예제\n2. 서버-클라이언트 통합 코드 예제 포함\n```cpp\n// 서버 코드 (센서 데이터 전송)\n// 클라이언트 코드 (데이터 수신 및 처리)\n// 연결 상태 관리 및 오류 처리\n```\n3. 회로 연결 다이어그램 및 하드웨어 설정 가이드\n4. 단계별 테스트 및 검증 방법\n5. 관련 이미지 및 스크린샷 삽입",
+        "testStrategy": "- 전체 예제 구현 및 실행 테스트\n- 하드웨어 연결 정확성 확인\n- 이미지 및 다이어그램 표시 확인\n- 단계별 가이드 명확성 검토\n- 줄 수가 500줄 이내인지 확인",
+        "priority": "medium",
+        "dependencies": [
+          6,
+          7
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 9,
+        "title": "모듈 5: 응용 사례 및 프로젝트 아이디어 작성",
+        "description": "ESP32 BLE를 활용한 실제 응용 사례와 프로젝트 아이디어를 포함한 다섯 번째 모듈을 작성합니다.",
+        "details": "1. 마크다운 형식으로 다음 내용 작성:\n   - IoT 시스템에서의 BLE 활용 사례\n   - 스마트홈 응용 예제\n   - 웨어러블 디바이스 연동 방법\n   - 모바일 앱 연동 가능성\n2. 미니 프로젝트 아이디어 및 구현 방향 제시\n3. 확장 가능성 및 추가 학습 자료 안내\n4. 관련 이미지 및 다이어그램 삽입\n5. 참고 자료 및 추가 리소스 링크",
+        "testStrategy": "- 제시된 응용 사례의 실현 가능성 검토\n- 프로젝트 아이디어의 난이도 및 적합성 평가\n- 이미지 및 다이어그램 표시 확인\n- 참고 자료 링크 유효성 확인\n- 줄 수가 500줄 이내인지 확인",
+        "priority": "low",
+        "dependencies": [
+          8
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 10,
+        "title": "문서 통합 및 상호 참조 구현",
+        "description": "작성된 모든 모듈을 통합하고 모듈 간 상호 참조를 구현합니다.",
+        "details": "1. 각 모듈 파일 간 링크 구현\n```markdown\n[BLE 서버 구현 방법](module2_ble_server.md)\n```\n2. 목차 및 내비게이션 시스템 구축\n3. 용어집 및 색인 작성\n4. 일관된 형식 및 스타일 적용\n5. 모듈 간 중복 내용 제거 및 최적화\n6. 전체 문서 구조 검토 및 조정",
+        "testStrategy": "- 모든 링크 및 참조 유효성 확인\n- 내비게이션 시스템 사용성 테스트\n- 형식 및 스타일 일관성 검토\n- 중복 내용 제거 확인\n- 각 모듈이 500줄 제한을 준수하는지 최종 확인",
+        "priority": "medium",
+        "dependencies": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 11,
+        "title": "품질 검토 및 오류 수정",
+        "description": "작성된 강의자료의 품질을 검토하고 오류를 수정합니다.",
+        "details": "1. 기술적 정확성 검토\n2. 코드 예제 컴파일 및 실행 테스트\n3. 이미지 및 다이어그램 표시 확인\n4. 마크다운 렌더링 테스트\n5. 맞춤법 및 문법 오류 수정\n6. 내용의 논리적 흐름 검토\n7. 누락된 정보 보완",
+        "testStrategy": "- 다양한 마크다운 뷰어에서 렌더링 테스트\n- 코드 예제 실행 결과 확인\n- 전문가 리뷰 및 피드백 수집\n- 초보자 관점에서의 이해도 평가\n- 모든 이미지 및 링크 유효성 최종 확인",
+        "priority": "high",
+        "dependencies": [
+          10
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 12,
+        "title": "최종 문서 패키징 및 배포",
+        "description": "완성된 강의자료를 최종 패키징하고 배포 준비를 합니다.",
+        "details": "1. 모든 모듈 파일 최종 검토\n2. README.md 메인 파일 작성 (전체 강의자료 소개 및 사용 방법)\n3. 이미지 및 코드 예제 파일 구조 최적화\n4. 라이센스 및 저작권 정보 추가\n5. 기여 방법 및 문의처 정보 포함\n6. 최종 패키지 압축 및 배포 준비\n7. 문서 버전 관리 방안 수립",
+        "testStrategy": "- 전체 패키지 구조 및 파일 무결성 확인\n- 다양한 환경에서의 접근성 테스트\n- 라이센스 및 저작권 정보 정확성 확인\n- 최종 사용자 관점에서의 사용성 평가\n- 문서 업데이트 및 유지보수 계획 검토",
+        "priority": "medium",
+        "dependencies": [
+          11
+        ],
+        "status": "pending",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "created": "2025-07-10T10:17:06.510Z",
+      "updated": "2025-07-10T10:21:47.869Z",
+      "description": "Tasks for master context"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+pCharacteristic->setValue("Hello World says Neil");
